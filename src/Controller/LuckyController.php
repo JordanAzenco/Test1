@@ -21,4 +21,16 @@ class LuckyController extends AbstractController
             'number' => $number,
         ]);
     }
+
+
+    /**
+     * Matches /{slug} exactly
+     * @Route("/{slug}", name="show_pages")
+     */
+    public function show($slug){
+        $number = random_int(0, 100);
+        return $this->render('pages/'. $slug . '.html.twig', [
+            'number' => $number,
+        ]);
+    }
 }
